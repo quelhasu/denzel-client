@@ -1,7 +1,8 @@
 <template>
   <div class="cards-thumbnail">
     <div
-      class="card animated bounce-in"
+      v-scroll-reveal="{delay: updateDelay(index), distance:'50px'}"
+      class="card"
       v-for="(movie, index) in movies"
       v-on:click="goToMovie(movie)"
     >
@@ -57,13 +58,14 @@ export default {
     return {
       movie: {},
       movies: [],
-      errors: []
+      errors: [],
+      delay: 200
     };
   },
   methods: {
     async getRandomMovie() {
       await axios
-        .get("https://denzel-api.herokuapp.com/movies/search?limit=10")
+        .get("https://denzel-api.herokuapp.com/movies/search?limit=15")
         .then(resp => {
           this.movies = resp.data.results;
         })
@@ -73,6 +75,9 @@ export default {
     },
     goToMovie(movie) {
       window.open(movie.link, "_blank");
+    },
+    updateDelay(index) {
+      return this.delay + 100 * index;
     }
   },
   mounted() {

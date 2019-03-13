@@ -40,6 +40,7 @@ export default {
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  /* overflow: hidden auto; */
 }
 
 #app {
@@ -49,7 +50,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  overflow: hidden auto !important;
+  /* overflow: hidden auto !important; */
 }
 
 h1 {
