@@ -1,6 +1,10 @@
 <template>
-  <div class="cards">
-    <div class="card animated bounce-in" v-on:click="goToMovie(movie)">
+  <div class="cards-thumbnail">
+    <div
+      class="card animated bounce-in"
+      v-for="(movie, index) in movies"
+      v-on:click="goToMovie(movie)"
+    >
       <img class="card-image" :src="movie.poster">
       <div class="card-divider">
         <div class="vote">
@@ -38,11 +42,6 @@
         </div>
       </div>
     </div>
-    <section id="scroll">
-      <a href="zizi">
-        <span></span>
-      </a>
-    </section>
   </div>
 </template>
 
@@ -50,22 +49,23 @@
 import axios from "axios";
 
 export default {
-  name: "MovieCard",
+  name: "AllMovies",
   props: {
     artist: String
   },
   data: function() {
     return {
       movie: {},
+      movies: [],
       errors: []
     };
   },
   methods: {
     async getRandomMovie() {
       await axios
-        .get("https://denzel-api.herokuapp.com/movies")
+        .get("https://denzel-api.herokuapp.com/movies/search?limit=10")
         .then(resp => {
-          this.movie = resp.data[0];
+          this.movies = resp.data.results;
         })
         .catch(e => {
           this.errors.push(e);

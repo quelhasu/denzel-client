@@ -83,7 +83,7 @@ body
 
 .cards
   position: relative
-  height: 87.25vh
+  height: 89vh
   display: flex
   // flex-direction: row
   flex-direction: column
@@ -91,7 +91,42 @@ body
   justify-content: center
   @include smartphone
     flex-direction: column
-    height: 82.25vh
+    // height: 82.25vh
+
+.cards-thumbnail
+  position: relative
+  // height: 100vh
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  @include smartphone
+    flex-direction: row
+  .card
+    width: 200px
+    margin: 1.5vh
+    @include smartphone
+      margin: 1vh
+      width: 189px
+    &-image
+      height: 30vh
+    &-footer
+      font-size: 0.7rem
+    .body-synopsis
+      font-size: 0.75rem
+      overflow: hidden
+      display: -webkit-box
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
+    .body-title
+      font-size: 0.8rem
+    .vote
+      bottom: -2.5vh
+      .fas
+        height: 40px
+        width: 40px
+        line-height: 1.2
+
 
 .card
   background-color: $card-color
@@ -296,6 +331,44 @@ body
     background: $win-color
   .loose
     background: $loose-color
+
+#scroll
+  // margin-top: 10vh
+  position: sticky
+  a 
+    bottom: 20px
+    z-index: 2
+    display: inline-block
+    -webkit-transform: translate(0, -50%)
+    transform: translate(0, -50%)
+    color: #333
+    letter-spacing: .1em
+    text-decoration: none
+    transition: opacity .3s
+    left: 25px
+    span
+      // left: 25px
+      position: absolute
+      // top: -45px
+      width: 24px
+      height: 24px
+      margin-left: -12px
+      border-left: 1px solid
+      border-bottom: 1px solid
+      -webkit-transform: rotate(-45deg)
+      transform: rotate(-45deg)
+      -webkit-animation: scroll 2s infinite
+      animation: scroll 2s infinite
+      box-sizing: border-box
+
+@keyframes scroll
+  0% 
+    transform: rotate(-45deg) translate(0, 0)
+  20% 
+    transform: rotate(-45deg) translate(-10px, 10px)
+  40% 
+    transform: rotate(-45deg) translate(0, 0)
+  
 
 @keyframes fadingBackground
   0%

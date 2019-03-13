@@ -12,18 +12,21 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <MovieCard artist="test"/>
+    <AllMovies artist="test"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import MovieCard from "./components/MovieCard.vue";
+import AllMovies from "./components/AllMovies";
 
 export default {
   name: "app",
   components: {
     HelloWorld,
-    MovieCard
+    MovieCard,
+    AllMovies
   }
 };
 </script>
@@ -46,6 +49,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow: hidden auto !important;
 }
 
 h1 {
