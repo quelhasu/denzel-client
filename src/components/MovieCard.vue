@@ -27,6 +27,17 @@
         </div>
       </div>
     </div>
+    <div class="card card-review animated bounce-left" v-if="movie.review">
+      <h2 class="card-review-title">You said...</h2>
+      <img class="card-review-avatar" src="../assets/user.png">
+      <div class="card-review-text">"{{movie.review.review}}"</div>
+      <div class="card-review-footer">
+        <div>
+          <i class="fas fa-calendar"/>
+          {{movie.review.date}}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
