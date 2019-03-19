@@ -39,7 +39,7 @@
       </div>
     </div>
     <section id="scroll">
-      <a href="zizi">
+      <a href="#">
         <span></span>
       </a>
     </section>
