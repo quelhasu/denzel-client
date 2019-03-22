@@ -1,7 +1,7 @@
  <img src="http://iconshow.me/media/images/Mixed/small-n-flat-icon/png/512/movie.png" align="right" width="100">
 
 # Denzel Client
-> Client interface for Castle project
+> Client interface for Denzel project
 
 You can visit this [link](https://denzel-client.netlify.com/) to seet it working.
 
